@@ -1,4 +1,4 @@
-/* UTILITIES */
+/*GENERAL STYLES */
 * {
     margin: 0;
     padding: 0;
@@ -7,4 +7,37 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    height: 100vh;
+    background-image: linear-gradient(
+        to bottom,
+        #009688 0%,
+        #009688 15%,
+        #dbdbd3 15%,
+        #dbdbd3 100%
+    );
+}
+
+.container {
+    width: 80%;
+    height: 95%;
+    min-width: 900px;
+    background-color: #ffffff;
+}
+
+/* UTILITIES */
+/* display */
+.d-flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
 }
