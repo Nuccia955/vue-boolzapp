@@ -16,6 +16,7 @@ body {
         #dbdbd3 15%,
         #dbdbd3 100%
     );
+    cursor: default;
 }
 
 .container {
@@ -57,9 +58,34 @@ body {
     text-align: right;
 }
 
+#app.container .btn:hover,
+#app.container .btn:focus {
+    cursor: pointer;
+    color: #009688;
+}
+
+#app.container i:hover,
+#app.container i:focus {
+    color: #009688;
+    cursor: pointer;
+}
+
 /* widths */
 .w-100 {
     width: 100%;
+}
+
+/* components */
+.btn {
+    border: none;
+    background: transparent;
+    padding: 10px 0;
+}
+
+img.contact {
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 5px;
 }
 
 /* ASIDE */
@@ -71,12 +97,6 @@ aside {
 .header {
     padding: 10px 15px;
     background-color: #eaeaea;
-}
-
-img.contact {
-    width: 50px;
-    border-radius: 50%;
-    margin-right: 5px;
 }
 
 .header .actions i {
@@ -109,7 +129,7 @@ aside .search {
     background-color: #fafafa;
 }
 
-.search i {
+.search .btn {
     font-size: 1.2em;
     padding: 10px 25px;
     background-color: #fff;
@@ -123,7 +143,7 @@ aside .search {
     outline: none;
 }
 
-.search i:hover,
+.search .btn:hover,
 .search:focus,
 .search input:hover,
 .search input:focus {
@@ -142,6 +162,7 @@ aside .search {
 .contacts ul li.contact {
     border-bottom: 1px solid #f5f5f5;
     padding: 8px 20px;
+    cursor: pointer;
 }
 
 .contacts ul li.contact:last-child {
@@ -192,4 +213,38 @@ main .message-container {
     right: 5px;
     font-size: 0.65em;
     color: #b6b9bb;
+}
+
+.footer.console {
+    padding: 5px 40px;
+    background-color: #f3eeea;
+    justify-content: space-between;
+}
+
+.footer.console .btn {
+    padding: 0;
+}
+
+.footer.console .btn i {
+    color: #6b7376;
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+.footer.console input {
+    margin: 0 40px; 
+    line-height: 35px;
+    border: none;
+    border-radius: 5px;
+    padding: 0 15px;
+    outline: none;
+}
+
+.footer.console input:hover,
+.footer.console input:focus {
+    outline: 1px solid black;
+}
+
+.footer.console input::placeholder {
+    color: #9b9b9b;
 }
