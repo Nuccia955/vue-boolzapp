@@ -14,8 +14,47 @@
 </head>
 <body class="d-flex justify-content-center align-items-center">
     <!-- APP -->
-    <section id="app" class="container">
+    <section id="app" class="container d-flex">
+        <aside class="flex-column">
+            <!-- header user -->
+            <section class="header d-flex">
+                <div class="userID d-flex align-items-center">
+                    <img src="./img/avatar_io.jpg" alt="user">
+                    <span class="user-name">Nome Utente</span>
+                </div>
+                <div class="actions flex-grow-1 d-flex align-items-center justify-content-end">
+                    <i class="fas fa-circle-notch refresh"></i>
+                    <i class="fas fa-comment-alt message"></i>
+                    <i class="fas fa-ellipsis-v expand-actions"></i>
+                </div>
+            </section>
 
+            <!-- notifications -->
+            <section class="notifications d-flex align-items-center">
+                <i class="fas fa-bell-slash"></i>
+                <div class="text d-flex flex-column">
+                    <span>Ricevi notifiche di nuovi messaggi</span>
+                    <a href="#">Attiva notifiche desktop</a>
+                </div>
+            </section>
+
+            <!-- search bar -->
+            <section class="search d-flex">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Cerca o inizia una nuova chat" class="flex-grow-1">
+            </section>
+
+            <!-- contacts list -->
+            <section class="contacts">
+                <ul class="contacts-list">
+                    <li class="contact d-flex align-items-center">
+                        <img src="./img/avatar_1.jpg" alt="Michele">
+                        <span>Michele</span>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <main class="flex-grow-1"></main>
     </section>
     <!-- JS -->
     <script src="./js/main.js"></script>
