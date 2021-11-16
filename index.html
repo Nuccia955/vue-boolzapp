@@ -56,9 +56,9 @@
             <!-- contacts list -->
             <section class="contacts">
                 <ul class="contacts-list">
-                    <li class="contact d-flex align-items-center">
-                        <img src="./img/avatar_1.jpg" alt="Michele" class="contact">
-                        <span>Michele</span>
+                    <li class="contact d-flex align-items-center" v-for="(contact, index) in contacts">
+                        <img :src="`./img/avatar${contact.avatar}.jpg`" :alt="contact.name" class="contact">
+                        <span>{{contact.name}}</span>
                     </li>
                 </ul>
             </section>

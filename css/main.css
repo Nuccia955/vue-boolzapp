@@ -165,6 +165,12 @@ aside .search {
     cursor: pointer;
 }
 
+.contacts ul li.contact:hover,
+.contacts ul li.contact:focus {
+    background-color: #e7e7e7;
+}
+
+
 .contacts ul li.contact:last-child {
     border: none;
 }
