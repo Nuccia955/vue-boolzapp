@@ -164,3 +164,32 @@ main .text .last-access {
     color: #8e9496;
 }
 
+main .message-container {
+    background-image: url('../img/mine.jpg');
+    padding: 50px 100px;
+}
+
+.message-container .message {
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 45%;
+    position: relative;
+}
+
+.message-container .message.received {
+    background-color: #fff;
+}
+
+.message-container .message.sent {
+    background-color: #d5f9ba;
+    align-self: end;
+}
+
+.message-container .message .date {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    font-size: 0.65em;
+    color: #b6b9bb;
+}
