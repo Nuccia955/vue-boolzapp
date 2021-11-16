@@ -15,11 +15,12 @@
 <body class="d-flex justify-content-center align-items-center">
     <!-- APP -->
     <section id="app" class="container d-flex">
+        <!-- ASIDE -->
         <aside class="flex-column">
             <!-- header user -->
             <section class="header d-flex">
                 <div class="userID d-flex align-items-center">
-                    <img src="./img/avatar_io.jpg" alt="user">
+                    <img src="./img/avatar_io.jpg" alt="user" class="contact">
                     <span class="user-name">Nome Utente</span>
                 </div>
                 <div class="actions flex-grow-1 d-flex align-items-center justify-content-end">
@@ -48,13 +49,31 @@
             <section class="contacts">
                 <ul class="contacts-list">
                     <li class="contact d-flex align-items-center">
-                        <img src="./img/avatar_1.jpg" alt="Michele">
+                        <img src="./img/avatar_1.jpg" alt="Michele" class="contact">
                         <span>Michele</span>
                     </li>
                 </ul>
             </section>
         </aside>
-        <main class="flex-grow-1"></main>
+
+        <!-- MAIN -->
+        <main class="flex-grow-1">
+            <!-- header user -->
+            <section class="header contact d-flex align-items-center">
+                <div class="contact-informations d-flex align-items-center">
+                    <img src="./img/avatar_1.jpg" alt="Michele" class="contact">
+                    <div class="text d-flex flex-column">
+                        <span class="name">Michele</span>
+                        <span class="last-access">Ultimo accesso</span>
+                    </div>
+                </div>
+                <div class="actions flex-grow-1 d-flex align-items-center justify-content-end">
+                    <i class="fas fa-search search"></i>
+                    <i class="fas fa-paperclip paperclip"></i>
+                    <i class="fas fa-ellipsis-v expand-actions"></i>
+                </div>
+            </section>
+        </main>
     </section>
     <!-- JS -->
     <script src="./js/main.js"></script>

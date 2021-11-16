@@ -68,17 +68,18 @@ aside {
     border-right: 1px solid #d6d6d6;
 }
 
-aside .header {
+.header {
     padding: 10px 15px;
     background-color: #eaeaea;
 }
-aside .header .userID img {
+
+img.contact {
     width: 50px;
     border-radius: 50%;
     margin-right: 5px;
 }
 
-aside .header .actions i {
+.header .actions i {
     margin: 0 10px;
     color: #b1b1b1;
     font-size: 1.4em;
@@ -103,7 +104,7 @@ aside .header .actions i {
     font-size: 0.8em;
 }
 
-.search {
+aside .search {
     padding: 5px;
     background-color: #fafafa;
 }
@@ -137,9 +138,14 @@ aside .header .actions i {
 .contacts ul {
     list-style: none;
 }
+
 .contacts ul li.contact {
     border-bottom: 1px solid #f5f5f5;
     padding: 8px 20px;
+}
+
+.contacts ul li.contact:last-child {
+    border: none;
 }
 
 .contacts ul li.contact img {
@@ -149,3 +155,12 @@ aside .header .actions i {
 }
 
 /* MAIN */
+main .contact-informations img {
+    margin-right: 1em;
+}
+
+main .text .last-access {
+    font-size: 0.8em;
+    color: #8e9496;
+}
+
