@@ -16,7 +16,7 @@
     <!-- APP -->
     <section id="app" class="container d-flex">
         <!-- ASIDE -->
-        <aside class="flex-column">
+        <aside class="flex-column overflow-auto">
             <!-- header user -->
             <section class="header d-flex">
                 <div class="userID d-flex align-items-center">
@@ -87,7 +87,7 @@
             </section>
 
             <!-- message container -->
-            <section class="message-container flex-grow-1 d-flex flex-column .scroll-y">
+            <section class="message-container overflow-auto flex-grow-1 d-flex flex-column">
                 <div 
                     v-for="message in contacts[activeIndex].messages" class="message"
                     :class="`${message.status}`">
@@ -101,7 +101,12 @@
                 <button class="btn">
                     <i class="far fa-smile"></i>
                 </button>
-                <input type="text" placeholder="Scrivi un messaggio" class="flex-grow-1">
+                <input 
+                    type="text" 
+                    placeholder="Scrivi un messaggio" 
+                    class="flex-grow-1"
+                    v-model="newMessageText"
+                    @keyup.enter="addNewMessage()">
                 <button class="btn">
                     <i class="fas fa-microphone"></i>
                 </button>

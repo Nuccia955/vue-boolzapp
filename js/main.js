@@ -87,5 +87,27 @@ const app = new Vue ({
             },
         ],
         activeIndex: 0,
+        newMessageText: '',
     },
+    methods: {
+        addNewMessage() {
+            this.contacts[this.activeIndex].messages.push(
+                {
+                    date:'now',
+                    text: this.newMessageText,
+                    status: 'sent',
+                }
+            );
+            this.newMessageText = '';
+            setTimeout(() => {
+                this.contacts[this.activeIndex].messages.push(
+                    {
+                        date:'now',
+                        text: 'ok',
+                        status: 'received',
+                    }
+                );
+            }, 1000)
+        }
+    }
 })

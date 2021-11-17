@@ -54,6 +54,10 @@ body {
     flex-grow: 1;
 }
 
+.overflow-auto {
+    overflow-y: auto ;
+}
+
 /* text styles */
 .text-right {
     text-align: right;
@@ -170,7 +174,6 @@ aside .search {
 .contacts ul li.contact:focus {
     background-color: #e7e7e7;
 }
-
 
 .contacts ul li.contact:last-child {
     border: none;
