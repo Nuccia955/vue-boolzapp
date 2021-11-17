@@ -88,6 +88,13 @@ const app = new Vue ({
         ],
         activeIndex: 0,
         newMessageText: '',
+        answers: [
+            "ok",
+            ":)",
+            "A bonooo! Come stai?",
+            "Che mi racconti?",
+            "Ehilà ciao!",
+        ],
     },    
     methods: {
         addNewMessage() {
@@ -101,17 +108,18 @@ const app = new Vue ({
                 }
             );
             this.newMessageText = '';
+            const randIndexAnswer =  Math.floor(Math.random() * (this.answers.length));
             setTimeout(() => {
                 now = dayjs();
                 nowFormat = dayjs().format('DD/MM/YYYY HH:mm:ss');
                 this.contacts[this.activeIndex].messages.push(
                     {
                         date: nowFormat,
-                        text: 'ok',
+                        text: this.answers[randIndexAnswer],
                         status: 'received',
                     }
                 );
             }, 1000)
-        }
+        },
     }
 })
