@@ -98,7 +98,6 @@ const app = new Vue ({
     },    
     methods: {
         addNewMessage() {
-            let now = dayjs();
             let nowFormat = dayjs().format('DD/MM/YYYY hh:mm:ss');
             this.contacts[this.activeIndex].messages.push(
                 {
@@ -110,7 +109,6 @@ const app = new Vue ({
             this.newMessageText = '';
             const randIndexAnswer =  Math.floor(Math.random() * (this.answers.length));
             setTimeout(() => {
-                now = dayjs();
                 nowFormat = dayjs().format('DD/MM/YYYY HH:mm:ss');
                 this.contacts[this.activeIndex].messages.push(
                     {
