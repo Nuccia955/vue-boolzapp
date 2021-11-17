@@ -88,21 +88,25 @@ const app = new Vue ({
         ],
         activeIndex: 0,
         newMessageText: '',
-    },
+    },    
     methods: {
         addNewMessage() {
+            let now = dayjs();
+            let nowFormat = dayjs().format('DD/MM/YYYY hh:mm:ss');
             this.contacts[this.activeIndex].messages.push(
                 {
-                    date:'now',
+                    date: nowFormat,
                     text: this.newMessageText,
                     status: 'sent',
                 }
             );
             this.newMessageText = '';
             setTimeout(() => {
+                now = dayjs();
+                nowFormat = dayjs().format('DD/MM/YYYY HH:mm:ss');
                 this.contacts[this.activeIndex].messages.push(
                     {
-                        date:'now',
+                        date: nowFormat,
                         text: 'ok',
                         status: 'received',
                     }
