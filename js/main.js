@@ -121,19 +121,13 @@ const app = new Vue ({
             }
         },
         filterContacts() {
-            const searchInput = this.searchInput.toLowerCase().split('');
-            console.log(searchInput)
+            const searchInput = this.searchInput.toLowerCase();
             this.contacts.forEach(el => {
-                if(searchInput.length === 0) {
-                    return el.visible = true;
-                }
-                const name = el.name.toLowerCase().split('');
-                console.log(name);
-                searchInput.forEach(char => {
-                    if(!name.includes(char)) {
-                        el.visible = false
-                    }
-                })
+                if (!el.name.toLowerCase().includes(searchInput)) {
+                    el.visible = false;
+                } else {
+                    el.visible = true
+                }                
             })
         }
     }
