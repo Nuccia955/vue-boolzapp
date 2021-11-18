@@ -50,7 +50,11 @@
                 <button class="btn">
                     <i class="fas fa-search"></i>
                 </button>
-                <input type="text" placeholder="Cerca o inizia una nuova chat" class="flex-grow-1">
+                <input type="text"
+                       placeholder="Cerca o inizia una nuova chat" class="flex-grow-1"
+                       v-model.trim="searchInput"
+                       @keyup="filterContacts"
+                >
             </section>
 
             <!-- contacts list -->
@@ -60,6 +64,8 @@
                         class="contact d-flex align-items-center" 
                         v-for="(contact, index) in contacts"
                         @click="activeIndex = index" 
+                        :class="{active: index === activeIndex}"
+                        v-show="contact.visible"
                     >
                         <img :src="`./img/avatar${contact.avatar}.jpg`" :alt="contact.name" class="contact">
                         <span>{{contact.name}}</span>
@@ -105,7 +111,7 @@
                     type="text" 
                     placeholder="Scrivi un messaggio" 
                     class="flex-grow-1"
-                    v-model="newMessageText"
+                    v-model.trim="newMessageText"
                     @keyup.enter="addNewMessage()">
                 <button class="btn">
                     <i class="fas fa-microphone"></i>

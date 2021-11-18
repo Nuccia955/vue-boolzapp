@@ -88,6 +88,7 @@ const app = new Vue ({
         ],
         activeIndex: 0,
         newMessageText: '',
+        searchInput: '',
         answers: [
             "ok",
             ":)",
@@ -98,26 +99,42 @@ const app = new Vue ({
     },    
     methods: {
         addNewMessage() {
-            let nowFormat = dayjs().format('DD/MM/YYYY hh:mm:ss');
-            this.contacts[this.activeIndex].messages.push(
-                {
-                    date: nowFormat,
-                    text: this.newMessageText,
-                    status: 'sent',
-                }
-            );
-            this.newMessageText = '';
-            const randIndexAnswer =  Math.floor(Math.random() * (this.answers.length));
-            setTimeout(() => {
-                nowFormat = dayjs().format('DD/MM/YYYY HH:mm:ss');
+            if (this.newMessageText !== '') {
                 this.contacts[this.activeIndex].messages.push(
                     {
-                        date: nowFormat,
-                        text: this.answers[randIndexAnswer],
-                        status: 'received',
+                        date: dayjs().format('DD/MM/YYYY hh:mm:ss'),
+                        text: this.newMessageText,
+                        status: 'sent',
                     }
                 );
-            }, 1000)
+                this.newMessageText = '';
+                const randIndexAnswer =  Math.floor(Math.random() * (this.answers.length));
+                setTimeout(() => {
+                    this.contacts[this.activeIndex].messages.push(
+                        {
+                            date: dayjs().format('DD/MM/YYYY hh:mm:ss'),
+                            text: this.answers[randIndexAnswer],
+                            status: 'received',
+                        }
+                    );
+                }, 1000)
+            }
         },
+        filterContacts() {
+            const searchInput = this.searchInput.toLowerCase().split('');
+            console.log(searchInput)
+            this.contacts.forEach(el => {
+                if(searchInput.length === 0) {
+                    return el.visible = true;
+                }
+                const name = el.name.toLowerCase().split('');
+                console.log(name);
+                searchInput.forEach(char => {
+                    if(!name.includes(char)) {
+                        el.visible = false
+                    }
+                })
+            })
+        }
     }
 })

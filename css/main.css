@@ -172,6 +172,10 @@ aside .search {
 
 .contacts ul li.contact:hover,
 .contacts ul li.contact:focus {
+    background-color: #f7f7f7;
+}
+
+.contacts ul li.contact.active {
     background-color: #e7e7e7;
 }
 
